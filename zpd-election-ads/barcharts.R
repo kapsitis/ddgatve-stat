@@ -1,4 +1,6 @@
-setwd("/home/kalvis/workspace/ddgatve-stat/zpd-election-ads")
+#setwd("/home/kalvis/workspace/ddgatve-stat/zpd-election-ads")
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
 
 df <- read.table(
   file="declaration-data.csv", 

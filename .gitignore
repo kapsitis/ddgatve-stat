@@ -1,9 +1,15 @@
+.project
+.pydevproject
+.cache-main
+.classpath
+.settings
 .cache
 sbt-launch.jar
 .Rhistory
 data-analysis-course/source-material
 algorithms-course/compression-scala/project/target
 algorithms-course/compression-scala/target
+algorithms-course/compression-scala/bin
 extra-lib/*.jar
 lib/*.jar
 project/target/*

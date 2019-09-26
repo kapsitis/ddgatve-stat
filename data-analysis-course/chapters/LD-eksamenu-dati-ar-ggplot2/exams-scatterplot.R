@@ -9,6 +9,6 @@ p <- ggplot(df, aes(x=Part1, y=Part23, color=as.factor(Class))) +
   scale_color_manual(values=brewer.pal(4,"Set1")) + 
   geom_smooth(method='lm', se = FALSE)
 p
-ggsave(p, filename = "scatterplot.png", dpi = 400, type = "cairo",
-       width = 2.25, height = 1.25, units = "in")
+ggsave(p, filename = "scatterplot.png", dpi = 200, type = "cairo",
+       width = 4.25, height = 3.25, units = "in")
 
