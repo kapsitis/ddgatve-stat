@@ -4,6 +4,7 @@
 .classpath
 .settings
 .cache
+*.7z
 sbt-launch.jar
 .Rhistory
 data-analysis-course/source-material
