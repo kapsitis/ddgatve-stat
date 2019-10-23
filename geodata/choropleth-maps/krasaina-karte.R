@@ -1,12 +1,10 @@
 # Darba direktorija ir tekošā (kur atrodas dotais R scenārijs)
 # Var aizstāt arī ar absolūto ceļu: setwd("c:/Users/username/.../subdirectory")
-
-setwd("c:/Users/kalvis.apsitis/workspace/ddgatve-stat/geodata/vo-kartes")
-
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # nolasa CSV failu kā data.frame
 skoleni <- read.table(
-  file="vo2018-results.csv", 
+  file="school-data/vo_results_2018.csv", 
   sep=",",
   header=TRUE,
   row.names=NULL,  
@@ -68,7 +66,7 @@ require(RColorBrewer)
 
 # https://stackoverflow.com/questions/30790036/error-istruegpclibpermitstatus-is-not-true?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 # https://gis.stackexchange.com/questions/63577/joining-polygons-in-r?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
-require(rgdal)
+# require(rgdal)
 require(maptools)
 require(gridExtra)
 
