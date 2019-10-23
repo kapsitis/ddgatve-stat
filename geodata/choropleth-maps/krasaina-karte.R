@@ -1,6 +1,9 @@
-# Uzstāda to direktoriju, kuraa ir visi R skripti un CSV faili
-# "C:/" neraksta; lieto parastas daļsvītras, nevis apgrieztās (\)
+# Darba direktorija ir tekošā (kur atrodas dotais R scenārijs)
+# Var aizstāt arī ar absolūto ceļu: setwd("c:/Users/username/.../subdirectory")
+
 setwd("c:/Users/kalvis.apsitis/workspace/ddgatve-stat/geodata/vo-kartes")
+
+
 # nolasa CSV failu kā data.frame
 skoleni <- read.table(
   file="vo2018-results.csv", 
@@ -98,7 +101,9 @@ mapSHP.union <- unionSpatialPolygons(mapSHP, mapSHP@data$OlympiadRegion)
 
 row.names(totalCount) <- as.character(totalCount$OlympiadRegion)
 
-
+#######################################################################
+## mapSHP.union has 39 Polygons objects, but totalCount has 26 rows
+#######################################################################
 mapSHP.agg <- SpatialPolygonsDataFrame(mapSHP.union, totalCount)
 
 
