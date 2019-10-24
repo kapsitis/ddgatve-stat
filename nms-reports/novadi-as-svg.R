@@ -1,42 +1,47 @@
-library(grid)
-library(lattice)
+require(grid)
+require(lattice)
+require(latticeExtra)
+require(gridSVG)
+require(pxR)
+require(sp)
+require(maptools)
+require(classInt)
+require(colorspace)
+require(RCurl)
+require(gdata)
+require(Unicode)
 
-if (!"gridSVG" %in% installed.packages()) install.packages("gridSVG")
-library(gridSVG)
-
-if (!"pxR" %in% installed.packages()) install.packages("pxR")
-library(pxR)
-
-if (!"sp" %in% installed.packages()) install.packages("sp")
-library(sp)
-
-if (!"latticeExtra" %in% installed.packages()) install.packages("latticeExtra")
-library(latticeExtra)
-
-if (!"maptools" %in% installed.packages()) install.packages("maptools")
-library(maptools)
-
-if (!"classInt" %in% installed.packages()) install.packages("classInt")
-library(classInt)
-
-if (!"colorspace" %in% installed.packages()) install.packages("colorspace")
-library(colorspace)
-
-if (!"RCurl" %in% installed.packages()) install.packages("RCurl")
-library(RCurl)
-
-if (!"gdata" %in% installed.packages()) install.packages("gdata")
-library(gdata)
-
-if (!"Unicode" %in% installed.packages()) install.packages("Unicode")
-library(Unicode)
+#library(grid)
+#library(lattice)
+#if (!"gridSVG" %in% installed.packages()) install.packages("gridSVG")
+#library(gridSVG)
+#if (!"pxR" %in% installed.packages()) install.packages("pxR")
+#library(pxR)
+#if (!"sp" %in% installed.packages()) install.packages("sp")
+#library(sp)
+#if (!"latticeExtra" %in% installed.packages()) install.packages("latticeExtra")
+#library(latticeExtra)
+#if (!"maptools" %in% installed.packages()) install.packages("maptools")
+#library(maptools)
+#if (!"classInt" %in% installed.packages()) install.packages("classInt")
+#library(classInt)
+#if (!"colorspace" %in% installed.packages()) install.packages("colorspace")
+#library(colorspace)
+#if (!"RCurl" %in% installed.packages()) install.packages("RCurl")
+#library(RCurl)
+#if (!"gdata" %in% installed.packages()) install.packages("gdata")
+#library(gdata)
+#if (!"Unicode" %in% installed.packages()) install.packages("Unicode")
+#library(Unicode)
 
 
-setwd("/home/st/ddgatve-stat/reports/")
+#setwd("/home/st/ddgatve-stat/reports/")
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+
 source("school-utilities.R")
 
 source("amo-report-helper.R")
-
 
 chMun <- read.table(
   file="children-municipalities-2015-01-01.csv", 
@@ -156,6 +161,6 @@ for (id in unique(IDs)){
   theCount <- theCount + 1 
 }
 
-grid.script(filename="maps/tooltip.js")
+grid.script(filename="tooltip.js")
 
-grid.export("olympiad-participation-amo42.svg")
+grid.export("out/ao_participation_2015(42).svg")

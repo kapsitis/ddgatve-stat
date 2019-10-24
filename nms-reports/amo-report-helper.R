@@ -1,11 +1,5 @@
-#setwd("/Users/kapsitis/workspace/ddgatve-stat/reports/")
-#setwd("/home/kalvis/workspace/ddgatve-stat/reports/")
-
-
-if (!"plyr" %in% installed.packages()) install.packages("plyr")
-library(plyr)
-if (!"Unicode" %in% installed.packages()) install.packages("Unicode")
-library(Unicode)
+require(plyr)
+require(Unicode)
 
 source("school-utilities.R")
 
@@ -23,22 +17,6 @@ skoleniALL$Region6 = c("Kurzeme","Latgale","Pierīga","Vidzeme","Zemgale",
                        "Pierīga","Kurzeme","Latgale","Kurzeme","Rīga")
 
 xx <- aggregate(. ~ Region6, data=skoleniALL, FUN=sum)
-
-
-
-# skoleniLV = read.table(
-#   file="vs-apmac-val-lv-2014.csv", 
-#   sep=",",
-#   header=TRUE,
-#   row.names=NULL,  
-#   fileEncoding="UTF-8")
-# 
-# skoleniRU = read.table(
-#   file="vs-apmac-val-ru-2014.csv", 
-#   sep=",",
-#   header=TRUE,
-#   row.names=NULL,  
-#   fileEncoding="UTF-8")
 
 
 skolaPasvaldiba <- read.table(
@@ -302,9 +280,6 @@ getSkoloFrame <- function() {
   return(skoloFrame)
 }
 
-# skoloFrame <- getSkoloFrame()
-# skoloFrame1 <- skoloFrame[ order(skoloFrame[,1]), ]
-# skoloFrame2 <- skoloFrame[ order(-skoloFrame[,2], skoloFrame[,1]), ]
 
 getLookingGlass <- function() {
   # Pupils per teacher
@@ -335,7 +310,6 @@ getLookingGlass <- function() {
     LGTeachResults[[i]] <- theRes
   }
   
-#  LGParticipants <- LGTeachOlymp[LGTeachOlymp > 0]
   LGQ3 <- numeric()
   LGPoints <- numeric()
   LGcutOffScore <- qnorm(0.75, mean=15, sd=10)

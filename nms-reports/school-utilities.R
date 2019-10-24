@@ -1,8 +1,5 @@
 ## These functions are called to complement math olympiad data tables
 
-#setwd("/home/st/ddgatve-stat/reports/")
-#setwd("/home/kalvis/workspace/ddgatve-stat/reports/")
-
 ## Given the firstname, return the gender of the person (Male/Female)
 getGender <- function(name) {
   sex <- "Other"
@@ -84,30 +81,6 @@ getResultTables <- function(amoNum) {
   return(schoolLanguageList)
 }
 
-
-# %%%% Skolu valodas, kas nav izsecināmas no pieteikumiem
-# %% Ozolnieku vidusskola - L
-# %% Jūrmalas pilsētas Kauguru vidusskola - K
-# %% Kalnciema pagasta vidusskola - L
-# %% Krāslavas Valsts ģimnāzija - L
-# %% Kuldīgas Centra vidusskola - L
-# %% Rīgas 51. vidusskola - K
-# %% Rīgas 61. vidusskola - K
-# %% Rīgas 86.vidusskola - K
-# %% Rīgas 89. vidusskola - K
-# %% Rīgas Sergeja Žoltoka vidusskola - K
-# %% Rīgas vakara ģimnāzija - L
-# %% Rīgas Valsts vācu ģimnāzija - L
-# %% Sunākstes pamatskola - L
-# %% Vaiņodes vidusskola - L
-# %% Asūnes pamatskola - L
-# %% Preiļu Valsts ģimnāzija - L
-# %% Rēzeknes Valsts ģimnāzija - L
-# %% Rēzeknes 5.vidusskola - L
-# %% Priekules vidusskola - L
-# %% Skrundas vidusskola - L
-
-
 getSchoolsForLanguage <- function(lang) {
   
   schoolLanguageList <- getSchoolLanguageList()
@@ -185,21 +158,6 @@ getLang <- function(school, teacher) {
     }    
   }
 }
-
-# schoolsTest <- read.table(
-#   file="schools-test.csv", 
-#   sep=",",
-#   header=TRUE,
-#   row.names=NULL,  
-#   fileEncoding="UTF-8")
-# 
-# 
-# for (ii in 1:nrow(schoolsTest)) {
-#   arg1 <- as.character(schoolsTest[ii,1])
-#   arg2 <- as.character(schoolsTest[ii,2])
-#   lang <- getLang(arg1,arg2)
-#   print(sprintf("'%s' '%s' '%s'",arg1, arg2, lang))
-# }
 
 
 
