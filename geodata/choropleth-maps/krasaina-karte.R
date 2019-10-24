@@ -66,7 +66,7 @@ require(RColorBrewer)
 
 # https://stackoverflow.com/questions/30790036/error-istruegpclibpermitstatus-is-not-true?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 # https://gis.stackexchange.com/questions/63577/joining-polygons-in-r?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
-# require(rgdal)
+require(rgdal)
 require(maptools)
 require(gridExtra)
 
@@ -130,13 +130,18 @@ pal <- rev(brewer.pal(n, "Spectral"))
 
 
 #####
+## Tikai kontūras?
+#########
+
+png("overlay.png", width=720, height=440)
+par(mar=c(0.1,0.1,0.1,0.1))
+plot(mapSHP, border = "gray60", lwd = 1)
+plot(mapSHP.union, add = TRUE, border = "red3", lwd = 2)
+dev.off()
 
 
-# png("overlay.png", width=720, height=440)
-# par(mar=c(0.1,0.1,0.1,0.1))
-# plot(mapSHP, border = "gray60", lwd = 1)
-# plot(mapSHP.union, add = TRUE, border = "red3", lwd = 2)
-# dev.off()
+
+
 
 png("overlay2.png", width=720, height=440)
 par(mar=c(0.1,0.1,0.1,0.1))
