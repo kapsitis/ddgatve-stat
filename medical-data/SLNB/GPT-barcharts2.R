@@ -42,7 +42,7 @@ dev.off()
 
 barchart2a <- ggplot(data, aes(x = SLNB)) +
   geom_bar(position = "stack", fill="lightblue") +
-  labs(title = "Stacked Barchart of SLNB by Gender",
+  labs(title = "Barchart of SLNB",
        x = "SLNB",
        y = "Count of Patients") +
   geom_text(aes(label = ..count..), stat = "count", position = position_stack(vjust = 0.5)) +
