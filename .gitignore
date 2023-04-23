@@ -9,7 +9,8 @@
 sbt-launch.jar
 SLNB/*.ods
 SLNB/*.csv
-
+medical-data/SLNB/*.ods
+medical-data/SLNB/*.csv
 
 .Rhistory
 data-analysis-course/source-material
